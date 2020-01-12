@@ -6,7 +6,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
                      level=logging.INFO)
 
 def officer(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id,
+    context.bot.send_sticker(chat_id=update.effective_chat.id,
                              sticker="CAADBQADIwAD4RTDG2se4dhpZE0DFgQ")
 
 def main():
