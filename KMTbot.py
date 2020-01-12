@@ -1,8 +1,6 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
 
-updater = Updater(token='TOKEN', use_context=True)
-
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                      level=logging.INFO)
 logger = logging.getLogger()
@@ -16,6 +14,8 @@ def officer(update, context):
     update.message.reply_text(reply)
 
 def main():
+    updater = Updater(token='TOKEN', use_context=True)
+    
     officer_handler = CommandHandler('officer', officer)
     dispatcher.add_handler(officer_handler)
     updater.dispatcher.add_handler(CommandHandler('KMT', KMT))
